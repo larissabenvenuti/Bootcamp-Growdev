@@ -140,7 +140,7 @@ const App = () => {
           <span>EPISÓDIOS: <strong>{episodes ?? "XX"}</strong></span>
         </div>
         <div className="footer-credits">
-          <span>Desenvolvido por <strong>Nome do Growdever</strong> em {new Date().getFullYear()}</span>
+          <span>Desenvolvido por <strong>Larissa Benvenuti</strong> em {new Date().getFullYear()}.</span>
         </div>
       </footer>
     </div>

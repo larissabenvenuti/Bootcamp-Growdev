@@ -1,19 +1,9 @@
-:root {
-  --primary: #56CD42;
-  --primary-dark: #1a2d18;
-  --background: #000;
-  --card-bg: #25332e;
-  --text: #fff;
-  --text-secondary: #105718;
-}
-
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -22,15 +12,13 @@
 }
 
 .modal-content {
-  background-color: var(--card-bg);
-  width: 80%;
+  width: 100%;
   max-width: 800px;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: 70vh;
   animation: fadeIn 0.3s ease-in-out;
   color: var(--text);
 }
@@ -65,14 +53,20 @@
 
 .modal-body {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.character-main {
+  flex: 1;
+  min-width: 250px;
 }
 
 .character-image img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
+  max-width: 500px;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,6 +80,14 @@
   font-size: 1.2rem;
   color: var(--primary);
   margin-top: 20px;
+}
+
+.character-extra {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .location-details,
@@ -128,6 +130,10 @@
     font-size: 1.8rem;
   }
 
+  .modal-body {
+    flex-direction: column;
+  }
+
   .character-image img {
     max-width: 200px;
   }
@@ -144,4 +150,6 @@
   .origin-details p {
     font-size: 0.8rem;
   }
+
+
 }

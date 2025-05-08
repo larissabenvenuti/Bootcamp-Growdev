@@ -11,18 +11,14 @@ export const fetchCharacters = async (page = 1, name = '') => {
     const response = await api.get('/character', {
       params: { page, name },
     });
-
     const characters = response.data.results;
-
     const charactersWithEpisodes = await Promise.all(
       characters.map(async (character) => {
         const episodeUrls = character.episode;
         const lastEpisodeUrl = episodeUrls[episodeUrls.length - 1];
-
         try {
-          const episodePath = new URL(lastEpisodeUrl).pathname; 
-          const episodeResponse = await api.get(episodePath);
-
+          const lastEpisodeId = lastEpisodeUrl.split('/').pop();
+          const episodeResponse = await api.get(`episode/${lastEpisodeId}`);
           return {
             ...character,
             lastEpisodeName: episodeResponse.data.name,
@@ -36,6 +32,7 @@ export const fetchCharacters = async (page = 1, name = '') => {
         }
       })
     );
+    
 
     return {
       ...response.data,
