@@ -1,0 +1,126 @@
+.app-bg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background) url('/src/assets/images/FUNDO_3.jpg') center/cover no-repeat scroll;
+  background-size:auto;
+}
+
+.page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-grid-custom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px auto;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.carousel-arrow {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.pagination-info {
+  text-align: center;
+  margin: 20px auto 0;
+  color: var(--text);
+}
+
+.loading-container,
+.no-results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 20px;
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin-top: 200px;
+  text-align: center;
+  padding: 60px;
+  background-color: var(--text-secondary);
+  color: var(--primary);
+  gap: 20px;
+}
+
+.footer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  margin-bottom: 100px;
+}
+
+.footer-stats span strong {
+  color: var(--text);
+}
+
+.footer-credits {
+  font-size: 0.9rem;
+}
+
+.footer-credits strong {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .cards-grid-custom {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .carousel-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .pagination-info {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+
+  .footer-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

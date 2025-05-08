@@ -1,0 +1,147 @@
+:root {
+  --primary: #56CD42;
+  --primary-dark: #1a2d18;
+  --background: #000;
+  --card-bg: #25332e;
+  --text: #fff;
+  --text-secondary: #105718;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
+  animation: fadeIn 0.3s ease-in-out;
+  color: var(--text);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.character-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-info p {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 5px 0;
+}
+
+.character-info h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-top: 20px;
+}
+
+.location-details,
+.origin-details {
+  background-color: var(--primary-dark);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location-details p,
+.origin-details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-close {
+    font-size: 1.8rem;
+  }
+
+  .character-image img {
+    max-width: 200px;
+  }
+
+  .character-info p {
+    font-size: 0.9rem;
+  }
+
+  .character-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .location-details p,
+  .origin-details p {
+    font-size: 0.8rem;
+  }
+}

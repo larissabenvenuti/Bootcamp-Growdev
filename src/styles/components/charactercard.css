@@ -1,0 +1,60 @@
+.character-card {
+  display: flex;
+  background-color: rgba(33, 52, 41, 0.9);
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.character-card:hover {
+  transform: scale(1.03);
+}
+
+.image-wrapper {
+  flex-shrink: 0;
+}
+
+.character-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.character-content {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.character-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.character-status,
+.character-location-label,
+.character-episode-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 2px 0;
+}
+
+.character-location-value,
+.character-episode-value {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.status-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
