@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import CharacterCard from "../components/CharacterCard";
 import CharacterModal from "../components/CharacterModal";
@@ -9,8 +9,8 @@ import "../styles/layout/main.css";
 import "../styles/layout/pagination.css";
 
 const CARDS_PER_PAGE = 12;
-const LEFT_COLUMN_COUNT = 8;
-const RIGHT_COLUMN_COUNT = 4;
+const LEFT_COLUMN_COUNT = 7;
+const RIGHT_COLUMN_COUNT = 5;
 
 const App = () => {
   const [characters, setCharacters] = useState([]);

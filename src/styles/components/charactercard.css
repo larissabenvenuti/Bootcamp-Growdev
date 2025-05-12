@@ -4,7 +4,7 @@
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
-  color: white;
+  color: var (--text);
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
@@ -57,4 +57,36 @@
   border-radius: 50%;
   display: inline-block;
   margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .character-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 60vw;
+  }
+
+  .character-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+  }
+
+  .character-content {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .character-name {
+    font-size: 1.1rem;
+  }
+
+  .character-status,
+  .character-location-label,
+  .character-episode-label,
+  .character-location-value,
+  .character-episode-value {
+    font-size: 0.9rem;
+  }
 }

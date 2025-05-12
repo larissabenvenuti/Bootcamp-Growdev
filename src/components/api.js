@@ -11,32 +11,31 @@ export const fetchCharacters = async (page = 1, name = '') => {
     const response = await api.get('/character', {
       params: { page, name },
     });
+
     const characters = response.data.results;
-    const charactersWithEpisodes = await Promise.all(
+
+    const charactersWithDetails = await Promise.all(
       characters.map(async (character) => {
-        const episodeUrls = character.episode;
-        const lastEpisodeUrl = episodeUrls[episodeUrls.length - 1];
-        try {
-          const lastEpisodeId = lastEpisodeUrl.split('/').pop();
-          const episodeResponse = await api.get(`episode/${lastEpisodeId}`);
-          return {
-            ...character,
-            lastEpisodeName: episodeResponse.data.name,
-          };
-        } catch (error) {
-          console.error(`Erro ao buscar episódio de ${character.name}:`, error);
-          return {
-            ...character,
-            lastEpisodeName: 'Desconhecido',
-          };
-        }
+        const [originInfo, locationInfo, lastEpisodeInfo] = await Promise.all([
+          character.origin?.url ? api.get(character.origin.url) : null,
+          character.location?.url ? api.get(character.location.url) : null,
+          character.episode.length > 0
+            ? api.get(character.episode[character.episode.length - 1])
+            : null,
+        ]);
+
+        return {
+          ...character,
+          originDetails: originInfo ? originInfo.data : null,
+          locationDetails: locationInfo ? locationInfo.data : null,
+          lastEpisodeName: lastEpisodeInfo ? lastEpisodeInfo.data.name : 'Desconhecido',
+        };
       })
     );
-    
 
     return {
       ...response.data,
-      results: charactersWithEpisodes,
+      results: charactersWithDetails,
     };
   } catch (error) {
     console.error('Erro ao buscar personagens:', error);

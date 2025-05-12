@@ -94,14 +94,27 @@
 }
 
 @media (max-width: 768px) {
+  .app-bg {
+    background-size: cover; 
+  }
+
   .cards-grid-custom {
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .cards-col {
+    width: 100%;
+    flex: none;
+    align-items: center;
   }
 
   .carousel-controls {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px 10px;
   }
 
   .carousel-arrow {
@@ -111,16 +124,22 @@
   }
 
   .pagination-info {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .loading-container,
+  .no-results-container {
     font-size: 1rem;
+    padding: 40px 10px;
   }
 
   .footer {
-    font-size: 0.8rem;
+    margin-top: 80px;
   }
 
   .footer-stats {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 16px;
   }
 }

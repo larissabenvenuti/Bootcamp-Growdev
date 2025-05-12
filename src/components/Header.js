@@ -1,10 +1,11 @@
-import React from 'react';
 import '../styles/layout/header.css';
-import RickAndMortyLogo from '../assets/images/RICK_MORTY_ICON-01.svg';
+import RickAndMortyLogo from '../assets/images/RickMortyLogo.png';
+import { FaSearch } from 'react-icons/fa';
 
 const Header = ({ searchTerm, setSearchTerm }) => (
   <header className="header">
     <img src={RickAndMortyLogo} alt="Rick and Morty logo" className="header-logo" />
+
     <div className="header-content">
       <h1 className="header-title">API de Rick and Morty</h1>
       <div className="header-search-container">
@@ -15,7 +16,9 @@ const Header = ({ searchTerm, setSearchTerm }) => (
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />
-        <button className="search-button">🔍</button>
+        <button className="search-button">
+          <FaSearch />
+        </button>
       </div>
     </div>
   </header>

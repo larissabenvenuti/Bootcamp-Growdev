@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/components/charactercard.css';
 
 export default function CharacterCard({ character, onClick }) {
